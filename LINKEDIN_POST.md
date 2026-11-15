@@ -1,4 +1,4 @@
-For my front-end internship at Elevvo, I didn't want to submit six unrelated demos. So I built one product and made every task a part of it.
+For my front-end internship at Elevvo, I didn't want to submit seven unrelated demos. So I built one product and made every task a part of it.
 
 It's called TaskFlow, a fictional workspace for freelancers.
 
