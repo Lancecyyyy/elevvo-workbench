@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* TaskFlow design tokens — same family as lance-portfolio (cobalt / butter / cream) */
+:root {
+  --bg: #fbf8f1;
+  --surface: #ffffff;
+  --sunk: #f3eee2;
+  --ink: #14116b;
+  --ink-2: #3b3884;
+  --muted: rgb(20 17 107 / 0.62);
+  --faint: rgb(20 17 107 / 0.42);
+  --line: rgb(20 17 107 / 0.1);
+  --line-2: rgb(20 17 107 / 0.18);
+  --brand: #261cc1;
+  --brand-2: #1d1599;
+  --on-brand: #fffdfb;
+  --hi: #f7dd7d;
+  --on-hi: #150f6e;
+  --ok: #1d7f52;
+  --warn: #b85c0b;
+  --bad: #c0283c;
+  --side: #261cc1;
+  --shadow-sm: 0 1px 2px rgb(20 17 107 / 0.06);
+  --shadow-md: 0 1px 0 rgb(20 17 107 / 0.04), 0 12px 32px -14px rgb(20 17 107 / 0.28);
+  --shadow-lg: 0 30px 70px -30px rgb(20 17 107 / 0.45);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0930;
+  --surface: #13104a;
+  --sunk: #0f0c3d;
+  --ink: #f6f3ea;
+  --ink-2: #d7d3f5;
+  --muted: rgb(246 243 234 / 0.64);
+  --faint: rgb(246 243 234 / 0.42);
+  --line: rgb(246 243 234 / 0.09);
+  --line-2: rgb(246 243 234 / 0.17);
+  --brand: #8f87ff;
+  --brand-2: #a49dff;
+  --on-brand: #0b0930;
+  --hi: #f7dd7d;
+  --on-hi: #150f6e;
+  --ok: #5fd39c;
+  --warn: #f5a35b;
+  --bad: #ff7a8a;
+  --side: #120e4c;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 1px 0 rgb(0 0 0 / 0.2), 0 16px 36px -16px rgb(0 0 0 / 0.7);
+  --shadow-lg: 0 30px 70px -30px rgb(0 0 0 / 0.8);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-display: "Do Hyeon", "Geist", system-ui, sans-serif;
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunk: var(--sunk);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
+  --color-on-brand: var(--on-brand);
+  --color-hi: var(--hi);
+  --color-on-hi: var(--on-hi);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+  --color-side: var(--side);
+
+  --color-cobalt: #261cc1;
+  --color-cobalt-deep: #150f6e;
+  --color-butter: #f7dd7d;
+  --color-cream: #fffdfb;
+  --color-night: #0b0930;
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+
+  --animate-blink: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 88px;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--hi);
+    color: var(--on-hi);
+  }
+  button:not(:disabled),
+  [role="button"] {
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-2);
+  border-radius: 99px;
+  border: 3px solid var(--bg);
+}
+
+/* paper grain, only on large brand surfaces */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+mark {
+  background: var(--hi);
+  color: var(--on-hi);
+  border-radius: 3px;
+  padding: 0 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
