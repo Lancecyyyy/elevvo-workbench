@@ -14,8 +14,8 @@ There's more 3D too. The landing hero is a little board of task lanes you can cl
 
 Under the hood: React 19, strict TypeScript (no `any` anywhere), Tailwind v4, React Three Fiber, dnd-kit, React Hook Form, Recharts and Framer Motion.
 
-Live demo: [your Vercel link]
-Code: [your GitHub link]
+Live demo: https://elevvo-workbench.vercel.app
+Code: https://github.com/Lancecyyyy/elevvo-workbench
 
 Thank you Elevvo for the briefs. Building them as one story taught me more than building them separately would have.
 
@@ -24,5 +24,5 @@ Thank you Elevvo for the briefs. Building them as one story taught me more than 
 ---
 Before posting:
 1. Type "@Elevvo" in LinkedIn and pick the page from the list, in the first line and in the thank-you line.
-2. Replace the two links.
+2. The links are already filled in.
 3. Attach a 30–40s screen recording in this order: click a card in the 3D hero → open the demo → drag a gig to Offer → "Make it a project" → spin the globe and click a pin → switch to dark mode. That sequence shows the connected story better than the text does.

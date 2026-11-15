@@ -12,7 +12,7 @@ screen reads and writes the same data store, so the tasks work together as one p
 - Every client city in **Projects** gets a pin on the **3D weather globe**, with local time and a "good time to call?" check.
 - The **landing page** shows live numbers taken from the demo workspace.
 
-**Live demo:** _add your Vercel URL here_
+**Live demo:** [elevvo-workbench.vercel.app](https://elevvo-workbench.vercel.app)
 
 ## Tasks covered
 
